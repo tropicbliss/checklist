@@ -33,7 +33,7 @@ const Home: NextPage = () => {
                       </button>
                       <Link
                         href="/checklist"
-                        className="text-sm font-semibold leading-6 text-gray-900"
+                        className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
                       >
                         Checklist <span aria-hidden="true">→</span>
                       </Link>
