@@ -90,7 +90,7 @@ const TaskList = ({ addCallback }: HeaderProps) => {
     onMutate: async (updatedEntry) => {
       await utils.task.getAll.cancel();
       utils.task.getAll.setData(undefined, (prevEntries) => {
-        return prevEntries!.map((entry) => {
+        return prevEntries?.map((entry) => {
           if (entry.id === updatedEntry.id) {
             return { ...entry, priority: updatedEntry.priority };
           }
@@ -106,7 +106,7 @@ const TaskList = ({ addCallback }: HeaderProps) => {
     onMutate: async (deletedEntry) => {
       await utils.task.getAll.cancel();
       utils.task.getAll.setData(undefined, (prevEntries) => {
-        return prevEntries!.filter((entry) => entry.id !== deletedEntry.id);
+        return prevEntries?.filter((entry) => entry.id !== deletedEntry.id);
       });
     },
     onSettled: async () => {
@@ -135,7 +135,7 @@ const TaskList = ({ addCallback }: HeaderProps) => {
                 });
               }}
               className={`light:hover:bg-gray-50 block ${
-                task.priority && "border-l-4 border-indigo-600"
+                task.priority ? "border-l-4 border-indigo-600" : ""
               }`}
             >
               <div className="flex items-center px-4 py-4 sm:px-6">

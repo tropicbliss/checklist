@@ -16,7 +16,6 @@ export default function Notification({
   if (!message) {
     show = false;
   }
-  const msg = message || "";
 
   return (
     <>
