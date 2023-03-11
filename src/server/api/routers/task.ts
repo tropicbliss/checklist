@@ -63,7 +63,7 @@ export const taskRouter = createTRPCRouter({
     }),
     deleteTask: protectedProcedure.input(
         z.object({
-            id: z.string()
+            id: z.string().uuid()
         })
     ).mutation(async ({ ctx, input }) => {
         try {
