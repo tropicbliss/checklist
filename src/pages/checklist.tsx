@@ -35,7 +35,7 @@ const Header = ({ addCallback }: HeaderProps) => {
     "light:ring-1 light:ring-inset light:ring-gray-300 light:hover:bg-gray-50 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm dark:bg-white/10 dark:text-white dark:hover:bg-white/20";
 
   return (
-    <div className="p-8 dark:bg-slate-800 md:flex md:items-center md:justify-between">
+    <div className="p-4 dark:bg-slate-800 sm:p-8 md:flex md:items-center md:justify-between">
       <div className="min-w-0 flex-1">
         <h2 className="text-2xl font-bold leading-7 text-gray-900 dark:text-white sm:truncate sm:text-3xl sm:tracking-tight">
           Checklist
@@ -124,7 +124,10 @@ const TaskList = ({ addCallback }: HeaderProps) => {
 
   return (
     <div className="overflow-hidden bg-white shadow dark:bg-slate-800 sm:rounded-md">
-      <ul role="list" className="divide-y divide-gray-200">
+      <ul
+        role="list"
+        className="divide-y divide-gray-200 dark:divide-slate-400"
+      >
         {taskEntries?.map((task) => (
           <li key={task.id}>
             <span
