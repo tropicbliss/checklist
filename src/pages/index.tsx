@@ -19,39 +19,37 @@ const Home: NextPage = () => {
                 Stay organized by providing a clear and structured way to keep
                 track of tasks, events, and goals
               </p>
-              {status !== "loading" && (
-                <div className="mt-10 flex items-center gap-x-6">
-                  {session ? (
-                    <>
-                      <button
-                        onClick={() => {
-                          signOut().catch(console.error);
-                        }}
-                        className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                      >
-                        Logout
-                      </button>
-                      <Link
-                        href="/checklist"
-                        className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
-                      >
-                        Checklist <span aria-hidden="true">→</span>
-                      </Link>
-                    </>
-                  ) : (
+              <div className="mt-10 flex items-center gap-x-6">
+                {session ? (
+                  <>
                     <button
                       onClick={() => {
-                        signIn("discord", {
-                          callbackUrl: "/checklist",
-                        }).catch(console.error);
+                        signOut().catch(console.error);
                       }}
                       className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
-                      Login with Discord
+                      Logout
                     </button>
-                  )}
-                </div>
-              )}
+                    <Link
+                      href="/checklist"
+                      className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+                    >
+                      Checklist <span aria-hidden="true">→</span>
+                    </Link>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => {
+                      signIn("discord", {
+                        callbackUrl: "/checklist",
+                      }).catch(console.error);
+                    }}
+                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Login with Discord
+                  </button>
+                )}
+              </div>
             </div>
           </div>
           <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">

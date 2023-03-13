@@ -114,11 +114,7 @@ const TaskList = ({ addCallback }: HeaderProps) => {
     },
   });
 
-  if (isLoading) {
-    return null;
-  }
-
-  if (taskEntries?.length === 0) {
+  if (isLoading || taskEntries?.length === 0) {
     return <EmptyList addCallback={addCallback} />;
   }
 
