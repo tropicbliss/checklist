@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Home: NextPage = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   return (
     <main>
